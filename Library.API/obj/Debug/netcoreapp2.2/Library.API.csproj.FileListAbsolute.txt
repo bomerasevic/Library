@@ -1,0 +1,17 @@
+C:\Project\Library\Library.API\bin\Debug\netcoreapp2.2\Library.API.deps.json
+C:\Project\Library\Library.API\bin\Debug\netcoreapp2.2\Library.API.runtimeconfig.json
+C:\Project\Library\Library.API\bin\Debug\netcoreapp2.2\Library.API.runtimeconfig.dev.json
+C:\Project\Library\Library.API\bin\Debug\netcoreapp2.2\Library.API.dll
+C:\Project\Library\Library.API\bin\Debug\netcoreapp2.2\Library.API.pdb
+C:\Project\Library\Library.API\bin\Debug\netcoreapp2.2\Library.DAL.dll
+C:\Project\Library\Library.API\bin\Debug\netcoreapp2.2\Library.DAL.pdb
+C:\Project\Library\Library.API\obj\Debug\netcoreapp2.2\Library.API.csprojAssemblyReference.cache
+C:\Project\Library\Library.API\obj\Debug\netcoreapp2.2\Library.API.csproj.CoreCompileInputs.cache
+C:\Project\Library\Library.API\obj\Debug\netcoreapp2.2\Library.API.RazorAssemblyInfo.cache
+C:\Project\Library\Library.API\obj\Debug\netcoreapp2.2\Library.API.RazorAssemblyInfo.cs
+C:\Project\Library\Library.API\obj\Debug\netcoreapp2.2\Library.API.AssemblyInfoInputs.cache
+C:\Project\Library\Library.API\obj\Debug\netcoreapp2.2\Library.API.AssemblyInfo.cs
+C:\Project\Library\Library.API\obj\Debug\netcoreapp2.2\Library.API.RazorTargetAssemblyInfo.cache
+C:\Project\Library\Library.API\obj\Debug\netcoreapp2.2\Library.API.csproj.CopyComplete
+C:\Project\Library\Library.API\obj\Debug\netcoreapp2.2\Library.API.dll
+C:\Project\Library\Library.API\obj\Debug\netcoreapp2.2\Library.API.pdb

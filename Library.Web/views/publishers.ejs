@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include partials/head %>
+</head>
+
+<body>
+    <% include partials/menu %>
+    <div class="containter-fluid">
+        <div class="container">
+            <div class="row flex align-items-center">
+                <div class="col-sm-8">
+                    <h1>Publishers</h1>
+                </div>
+                <div class="col-sm-4">
+                    <form action="/publishers/find" method="POST">
+                        <div class="input-group">
+                            <input type="text" id="name" name="name" class="form-control" placeholder="Search for...">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="submit">Search</button>
+                            </span>
+                        </div>
+                    </form>
+
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+
+                        <thead>
+                            <tr class="row">
+                                <th class="col-sm-6">Name</th>
+                                <th class="col-sm-4">Country</th>
+                                <th class="col-sm-2 text-center pr-0"><button class="btn btn-success" type="submit"
+                                        onclick="location.href=`/publishers/<%= 0 %>`">Add</button></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% publishers.forEach(function(publisher) { %>
+                            <tr class="row">
+                                <td class="col-sm-6"><%= publisher.name %></td>
+                                <td class="col-sm-4"><%= publisher.country %></td>
+                                <td class="col-sm-2 text-right pr-0"><button type="button" class="btn btn-default "
+                                        onclick="location.href=`/publishers/<%= publisher.id %>`">
+
+                                        Edit
+                                    </button>
+                                    <form class="btn" action="/publishers/delete/<%= publisher.id %>" method="GET">
+                                        <button class="btn btn-default type=" submit">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                            <% }); %>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<% include partials/script %>
+
+</html>

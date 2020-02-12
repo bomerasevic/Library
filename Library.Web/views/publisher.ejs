@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+   <% include partials/head %>
+</head>
+<body>
+   <% include partials/menu %>
+   <div class='container'>
+       <form action="/publishers/<%= publisher.id %>" method="post">
+           <div class='panel panel-primary' style='margin-top:24px;'>
+               <div class='panel-heading'>
+                   <div class='title'><%= title %></div>
+               </div>
+               <div class='panel-body'>
+                   <div class='row'>
+                       <div class='col-md-3'></div>
+                       <div class='col-md-6'>
+                           <input type="hidden" name="id" value="<%= publisher.id %>">
+                           <table class='table'>
+                               <tr>
+                                   <td align='right'>Name: </td>
+                                   <td><input type="text" class="form-control" name="name"
+                                           value="<%= publisher.name %>"></td>
+                               </tr>
+                               <tr>
+                                   <td align='right'>Address: </td>
+                                   <td><input type="text" class="form-control" name="road"
+                                           value="<%= publisher.road %>"></td>
+                               </tr>
+                               <tr>
+                                   <td align='right'>City: </td>
+                                   <td><input type="text" class="form-control" name="city"
+                                           value="<%= publisher.city %>"></td>
+                               </tr>
+                               <tr>
+                                   <td align='right'>Zip Code: </td>
+                                   <td><input type="text" class="form-control" name="zipCode"
+                                           value="<%= publisher.zipCode %>"></td>
+                               </tr>
+                               <tr>
+                                   <td align='right'>Country: </td>
+                                   <td><input type="text" class="form-control" name="country"
+                                           value="<%= publisher.country %>"></td>
+                               </tr>
+                           </table>
+                       </div>
+                       <div class='col-md-3'></div>
+                   </div>
+               </div>
+               <div class='panel-footer'>
+                   <div class='row'>
+                       <div class='col-md-3'>
+                           Books: <%= publisher.books.length %>
+                       </div>
+                       <div class='col-md-6'>
+                           <div class='pull-left'>
+                               <% if(publisher.books.length===0) { %>
+                               <a href="/publishers/delete/<%= publisher.id %>"><button type="button"
+                                       class="btn btn-warning btn-lg">Delete</button></a>
+                               <% } %>
+                           </div>
+                           <div class='pull-right'>
+                               <button type="submit" class="btn btn-success btn-lg">Save Data</button>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+
+</form>
+   </div>
+</body>
+</html>

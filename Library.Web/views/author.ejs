@@ -1,0 +1,74 @@
+
+<!doctype html>
+<html>
+<head>
+   <% include partials/head %>
+</head>
+<body>
+   <% include partials/menu %>
+   <div class='container'>
+       <form action="/authors/<%= author.id %>" method="post">
+           <div class='panel panel-primary' style='margin-top:24px;'>
+               <div class='panel-heading'>
+                   <div class='title'><%= title %></div>
+               </div>
+               <div class='panel-body'>
+                   <div class='row'>
+                       <div class='col-md-3'></div>
+                       <div class='col-md-6'>
+                           <input type="hidden" name="id" value="<%= author.id %>">
+                           <table class='table'>
+                               <tr>
+                                   <td align='right'>Name: </td>
+                                   <td><input type="text" class="form-control" name="name"
+                                           value="<%= author.name %>"></td>
+                               </tr>
+                               <tr>
+                                   <td align='right'>Image: </td>
+                                   <td><input type="text" class="form-control" name="image"
+                                           value="<%= author.image %>"></td>
+                               </tr>
+                               <tr>
+                                   <td align='right'>Biography: </td>
+                                   <td><input type="text" class="form-control" name="biography"
+                                           value="<%= author.biography %>"></td>
+                               </tr>
+                               <tr>
+                                   <td align='right'>Birthday: </td>
+                                   <td><input type="text" class="form-control" name="birthday"
+                                           value="<%= author.birthday %>"></td>
+                               </tr>
+                               <tr>
+                                   <td align='right'>Email: </td>
+                                   <td><input type="text" class="form-control" name="email"
+                                           value="<%= author.email %>"></td>
+                               </tr>
+                           </table>
+                       </div>
+                       <div class='col-md-3'></div>
+                   </div>
+               </div>
+               <div class='panel-footer'>
+                   <div class='row'>
+                       <div class='col-md-3'>
+                           Books: <%= author.books.length %>
+                       </div>
+                       <div class='col-md-6'>
+                           <div class='pull-left'>
+                               <% if(author.books.length===0) { %>
+                               <a href="/authors/delete/<%= author.id %>"><button type="button"
+                                       class="btn btn-warning btn-lg">Delete</button></a>
+                               <% } %>
+                           </div>
+                           <div class='pull-right'>
+                               <button type="submit" class="btn btn-success btn-lg">Save Data</button>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+
+</form>
+   </div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include partials/head %>
+</head>
+
+<body>
+    <% include partials/menu %>
+    <div class="containter-fluid">
+        <div class="container">
+            <div class="row flex align-items-center">
+                <div class="col-sm-8">
+                    <h1>Books</h1>
+                </div>
+                <div class="col-sm-4">
+                    <form action="/books/find" method="POST">
+
+                        <div class="input-group">
+                            <input type="text" id="name" name="name" class="form-control" placeholder="Search for...">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="submit">Search</button>
+                            </span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr class="row">
+                                <th class="col-sm-5">Title</th>
+                                <th class="col-sm-3">Pages</th>
+                                <th class="col-sm-2">Price</th>
+                                <th class="col-sm-2 text-center pr-0"><button class="btn btn-success"
+                                        type="submit">Add</button></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% books.forEach(function(book) { %>
+                            <tr class="row">
+                                <td class="col-sm-5"><%= book.title %></td>
+                                <td class="col-sm-3"><%= book.pages %></td>
+                                <td class="col-sm-2"><%= book.price %></td>
+                                <td class="col-sm-2 text-right pr-0"><button type="button" class="btn btn-default "
+                                    onclick="location.href=`/books/<%= book.id %>`">
+
+                                    Edit
+                                </button>
+                                        <form class="btn"  action="/books/delete/<%= book.id %>" method="GET">
+                                            <button class="btn btn-default type=" submit">Delete</button>
+                                        </form>
+                                </td>
+                            </tr>
+                            <% }); %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<% include partials/script %>
+
+</html>

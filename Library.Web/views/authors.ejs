@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include partials/head %>
+</head>
+
+<body>
+    <% include partials/menu %>
+    <div class="containter-fluid">
+        <div class="container">
+            <div class="row flex align-items-center">
+                <div class="col-sm-8">
+                    <h1>Authors</h1>
+                </div>
+                <div class="col-sm-4">
+                        <form action="/authors/find" method="POST">
+
+                            <div class="input-group">
+                                <input type="text" id="name" name="name" class="form-control" placeholder="Search for...">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="submit">Search</button>
+                                </span>
+                            </div>
+                        </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr class="row">
+                                <th class="col-sm-2">Image</th>
+                                <th class="col-sm-2">Name</th>
+                                <th class="col-sm-3">DOB</th>
+                                <th class="col-sm-3">Email</th>
+                                <th class="col-sm-2 text-center pr-0"><button class="btn btn-success"
+                                        type="submit" onclick="location.href=`/authors/<%= 0 %>`">Add</button></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% authors.forEach(function(author) { %>
+                            <tr class="row">
+                                <td class="col-sm-2"><%= author.image %></td>
+                                <td class="col-sm-2"><%= author.name %></td>
+                                <td class="col-sm-3"><%= moment(author.birthday).format('DD-MMM-YYYY') %></td>
+                                <td class="col-sm-3"><%= author.email %></td>
+                                <td class="col-sm-2 text-right pr-0"><button class="btn btn-default"
+                                    type="submit" onclick="location.href=`/authors/<%= author.id %>`">Edit</button>
+                                    <form class="btn" action="/authors/delete/<%= author.id %>" method="GET">
+                                        <button class="btn btn-default type=" submit">Delete</button>
+                                    </form>
+                            </td>
+                            </tr>
+                            <% }); %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<% include partials/script %>
+
+</html>
