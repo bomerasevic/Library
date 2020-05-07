@@ -2,9 +2,6 @@
 ---
 
 
-![INSERT YOUR GRAPHIC HERE](https://i.imgur.com/PWUR8Xv.png)
-
-![INSERT YOUR GRAPHIC HERE](https://i.imgur.com/ChspNQD.png)
 
 
 ### Table of Contents
@@ -15,7 +12,7 @@
 
 ---
 
-## Descriptionhttps
+## Description
 
 This program contains both front-end and back-end code for Library app built with EJS and ASP.NET core. This app allows user to: 
 * see all publishers, books, authors in library
